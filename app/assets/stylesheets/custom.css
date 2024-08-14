@@ -1,0 +1,33 @@
+/* Add a border to the table */
+.table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+/* Style table headers and cells */
+.table th, .table td {
+  border: 1px solid #ddd; /* Light gray border */
+  padding: 8px; /* Add padding for spacing */
+}
+
+/* Add background color to table headers */
+.table th {
+  background-color: #f2f2f2; /* Light gray background */
+  text-align: left; /* Align text to the left */
+}
+
+/* Add border to the section containing totals */
+.totals-section {
+  border-top: 2px solid #333; /* Dark border at the top */
+  padding-top: 10px; /* Add padding to the top */
+  margin-top: 20px; /* Add margin at the top */
+  background-color: #f9f9f9
+}
+
+/* Add borders to individual sections */
+.section-border {
+  border: 1px solid #ddd; /* Light gray border */
+  padding: 10px; /* Add padding inside the border */
+  margin-bottom: 20px; /* Add space below each section */
+}
+

@@ -1,0 +1,49 @@
+<h1>Products</h1>
+
+<%= link_to 'New Product', new_product_path, class: "btn btn-info" %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Size</th>
+      <th>Opening Stock</th>
+      <th>Closing Stock</th>
+      <th>Money In</th>
+      <th>Expenses</th>
+      <th>Debts</th>
+      <th>Net Amount</th>
+      <th>Actions</th>
+    </tr>   
+  </thead>
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.name %></td>
+        <td><%= product.description %></td>
+        <td><%= number_to_currency(product.price, unit: "KES") %></td>
+        <td><%= product.size %></td>
+        <td><%= product.opening_stock %></td>
+        <td><%= product.closing_stock %></td>
+        <td><%= number_to_currency(product.money_in, unit: "KES") %></td>
+        <td><%= number_to_currency(product.expenses, unit: "KES") %></td>
+        <td><%= number_to_currency(product.debts, unit: "KES") %></td>
+        <td><%= number_to_currency(product.net_amount, unit: "KES") %></td>
+        <td>
+          <%= link_to 'Show', product %> |
+          <%= link_to 'Edit', edit_product_path(product) %> |
+          <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="totals-section">
+  <h2>Total Money In: <%= number_to_currency(@total_money_in, unit: "KES") %></h2>
+  <h2>Total Expenses: <%= number_to_currency(@total_expenses, unit: "KES") %></h2>
+  <h2>Total Debts: <%= number_to_currency(@total_debts, unit: "KES") %></h2>
+  <h2>Total Net Amount: <%= number_to_currency(@total_net_amount, unit: "KES") %></h2>
+</div>

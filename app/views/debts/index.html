@@ -1,0 +1,22 @@
+<h1>Debts</h1>
+
+<%= link_to 'New Debt', new_debt_path, class: 'btn btn-info' %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @debts.each do |debt| %>
+      <tr>
+        <td><%= debt.description %></td>
+        <td><%= number_to_currency(debt.amount, unit: "KES") %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to 'Back', root_path %>
+

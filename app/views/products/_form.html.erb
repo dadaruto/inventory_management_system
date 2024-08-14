@@ -1,0 +1,58 @@
+<%= form_with(model: product, local: true) do |form| %>
+  <% if product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+        <% product.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.number_field :price, step: :any %>
+  </div>
+
+  <div class="field">
+    <%= form.label :size %>
+    <%= form.select :size, options_for_select(['750ml', '350ml']) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :opening_stock %>
+    <%= form.number_field :opening_stock %>
+  </div>
+
+  <div class="field">
+    <%= form.label :closing_stock %>
+    <%= form.number_field :closing_stock %>
+  </div>
+
+  <div class="field">
+    <%= form.label :expenses %>
+    <%= form.number_field :expenses, step: :any %>
+  </div>
+
+  <div class="field">
+    <%= form.label :debts %>
+    <%= form.number_field :debts, step: :any %>
+  </div>
+
+  <div class="actions" style="margin-top: 20px;">
+    <%= form.submit "Save Product", class: "btn btn-primary" %>
+  </div>
+<% end %>
+

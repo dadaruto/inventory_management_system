@@ -1,0 +1,35 @@
+/* custom_forms.css */
+.form-input {
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  padding: 0.5rem 0.75rem;
+  width: 100%; /* Ensure inputs take full width */
+}
+
+.form-textarea {
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  padding: 0.5rem;
+  width: 100%; /* Ensure textareas take full width */
+}
+
+.form-label {
+  display: block;   
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.form-submit {
+  background-color: #3b82f6;
+  color: #fff;
+  border-radius: 0.375rem;
+  padding: 0.5rem 1rem;
+  font-weight: 700;
+  border: none; /* Remove border for a cleaner look */
+  cursor: pointer; /* Add pointer cursor for better UX */
+}
+
+.form-submit:hover {
+  background-color: #2563eb; /* Darker shade on hover */
+}
+
